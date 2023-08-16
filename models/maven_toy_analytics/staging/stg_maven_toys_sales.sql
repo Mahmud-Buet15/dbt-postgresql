@@ -1,0 +1,1 @@
+select * from visualizations.maven_toys_sales
