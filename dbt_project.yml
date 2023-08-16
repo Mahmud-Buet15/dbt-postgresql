@@ -32,9 +32,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_postgresql_practice:
-    # Config indicated by + and applies to all files under models/example/
+    # Config indicated by + and applies to all files under models/example/   or models/staging/   etc
     example:
       +materialized: view
-    maven_toy_analytics:
+      +schema: staging
+    staging:
       +materialized: table
-    materialized: table
+      +schema: staging
+    warehouse:
+      +materialized: table
+      +schema: warehouse
+    reports:
+      +materialized: table
+      +schema: reports
+    materialized: view
